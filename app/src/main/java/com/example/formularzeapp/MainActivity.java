@@ -1,6 +1,7 @@
 package com.example.formularzeapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -51,5 +52,26 @@ public class MainActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
         dodaj = findViewById(R.id.button2);
         textViewKomunikat = findViewById(R.id.textViewKomunikat);
+
+        dodaj.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String imie = editTextImie.getText().toString();
+                        String gromada = spinnerGromada.getSelectedItem().toString();
+                        String gatunek = editTextGatunek.getText().toString();
+                        String wymarle;
+                        if(checkBoxWymarle.isChecked()){
+                            wymarle = "tak";
+                        }else{
+                            wymarle = "nie";
+                        }
+                        int wiek = seekBar.getProgress();
+                        int waga = Integer.parseInt(editTextWaga.getText().toString());
+
+                        textViewKomunikat.setText("Imię: " + imie + " Gromada: " + gromada + " Gatunek: " + gatunek + " Czy wymarłe: " + wymarle + " Tryb życia: " + "" + " Wiek: " + wiek);
+                    }
+                }
+        );
     }
 }
