@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">formularzeApp</string>
+    <string-array name="gromada">
+        <item>ssaki</item>
+        <item>ptaki</item>
+        <item>płazy</item>
+        <item>gady</item>
+        <item>rybki</item>
+    </string-array>
 </resources>
